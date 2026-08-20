@@ -1,0 +1,45 @@
+2026-07-24T18:20:59.413Z - TypeError: archiver is not a function
+    at query (C:\Users\HP\.gemini\antigravity\scratch\file_compressor\server.js:88:33)
+    at new Promise (<anonymous>)
+    at C:\Users\HP\.gemini\antigravity\scratch\file_compressor\server.js:86:19
+    at Layer.handleRequest (C:\Users\HP\.gemini\antigravity\scratch\file_compressor\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\HP\.gemini\antigravity\scratch\file_compressor\node_modules\router\lib\route.js:157:13)
+    at done (C:\Users\HP\.gemini\antigravity\scratch\file_compressor\node_modules\multer\lib\make-middleware.js:70:7)
+    at indicateDone (C:\Users\HP\.gemini\antigravity\scratch\file_compressor\node_modules\multer\lib\make-middleware.js:74:68)
+    at C:\Users\HP\.gemini\antigravity\scratch\file_compressor\node_modules\multer\lib\make-middleware.js:247:11
+    at WriteStream.<anonymous> (C:\Users\HP\.gemini\antigravity\scratch\file_compressor\node_modules\multer\storage\disk.js:47:9)
+    at WriteStream.emit (node:events:521:24)
+2026-07-24T18:21:08.093Z - TypeError: archiver is not a function
+    at query (C:\Users\HP\.gemini\antigravity\scratch\file_compressor\server.js:88:33)
+    at new Promise (<anonymous>)
+    at C:\Users\HP\.gemini\antigravity\scratch\file_compressor\server.js:86:19
+    at Layer.handleRequest (C:\Users\HP\.gemini\antigravity\scratch\file_compressor\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\HP\.gemini\antigravity\scratch\file_compressor\node_modules\router\lib\route.js:157:13)
+    at done (C:\Users\HP\.gemini\antigravity\scratch\file_compressor\node_modules\multer\lib\make-middleware.js:70:7)
+    at indicateDone (C:\Users\HP\.gemini\antigravity\scratch\file_compressor\node_modules\multer\lib\make-middleware.js:74:68)
+    at C:\Users\HP\.gemini\antigravity\scratch\file_compressor\node_modules\multer\lib\make-middleware.js:247:11
+    at WriteStream.<anonymous> (C:\Users\HP\.gemini\antigravity\scratch\file_compressor\node_modules\multer\storage\disk.js:47:9)
+    at WriteStream.emit (node:events:521:24)
+2026-07-24T18:21:53.215Z - TypeError: archiver is not a function
+    at query (C:\Users\HP\.gemini\antigravity\scratch\file_compressor\server.js:88:33)
+    at new Promise (<anonymous>)
+    at C:\Users\HP\.gemini\antigravity\scratch\file_compressor\server.js:86:19
+    at Layer.handleRequest (C:\Users\HP\.gemini\antigravity\scratch\file_compressor\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\HP\.gemini\antigravity\scratch\file_compressor\node_modules\router\lib\route.js:157:13)
+    at done (C:\Users\HP\.gemini\antigravity\scratch\file_compressor\node_modules\multer\lib\make-middleware.js:70:7)
+    at indicateDone (C:\Users\HP\.gemini\antigravity\scratch\file_compressor\node_modules\multer\lib\make-middleware.js:74:68)
+    at C:\Users\HP\.gemini\antigravity\scratch\file_compressor\node_modules\multer\lib\make-middleware.js:247:11
+    at WriteStream.<anonymous> (C:\Users\HP\.gemini\antigravity\scratch\file_compressor\node_modules\multer\storage\disk.js:47:9)
+    at WriteStream.emit (node:events:521:24)
+2026-07-25T17:33:21.714Z - Error: Ghostscript is not installed or not in PATH. Please install Ghostscript (gswin64c) to compress PDFs.
+    at C:\Users\HP\.gemini\antigravity\scratch\file_compressor\server.js:121:32
+    at ChildProcess.exithandler (node:child_process:424:5)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5)
+2026-07-25T17:34:53.824Z - Error: Ghostscript is not installed or not in PATH. Please install Ghostscript (gswin64c) to compress PDFs.
+    at C:\Users\HP\.gemini\antigravity\scratch\file_compressor\server.js:121:32
+    at ChildProcess.exithandler (node:child_process:424:5)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1124:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5)

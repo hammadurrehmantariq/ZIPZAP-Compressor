@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZipZap - Modern File Compressor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+    
+    <nav class="navbar">
+        <div class="logo">ZipZap.</div>
+        <ul class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="image.html">Images</a>
+            <a href="document.html">Documents</a>
+            <a href="admin.html">Database</a>
+        </ul>
+    </nav>
+
+    <main class="landing-container">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <h1>Compress Without Compromise.</h1>
+            <p>Secure, fast, and simple file compression right in your browser.</p>
+            <div class="action-buttons">
+                <a href="document.html" class="primary-btn">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    Compress Documents
+                </a>
+                <a href="image.html" class="primary-btn secondary-style">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                    Compress Images
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <div class="glass-card">
+                <h2>About Us</h2>
+                <p>ZipZap was created to solve a simple problem: securely compressing your files without the bloat. Whether it's a large PDF document you need to email or a high-res image you want to optimize for the web, our tool handles it seamlessly.</p>
+                <p>We pride ourselves on a beautiful, frictionless user experience combined with robust backend algorithms to ensure your files are safe and perfectly compressed.</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="glass-card">
+                <h2>Contact Us</h2>
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="4" required></textarea>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

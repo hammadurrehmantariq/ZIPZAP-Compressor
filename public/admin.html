@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Logs - ZipZap</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin-top: 2rem;
+            background: var(--card-bg);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        th, td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-light);
+        }
+        th {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .error-message {
+            color: #ef4444;
+            padding: 1rem;
+            background: rgba(239, 68, 68, 0.1);
+            border-radius: 0.5rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <nav>
+        <div class="logo">⚡ ZipZap</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="image.html">Images</a>
+            <a href="document.html">Documents</a>
+            <a href="admin.html" class="active">Database</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header>
+            <h1>Database <span class="highlight">Logs</span></h1>
+            <p>Live view of your MySQL database uploads table</p>
+        </header>
+
+        <div id="errorBox" class="error-message"></div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Original Filename</th>
+                        <th>Compressed Filename</th>
+                        <th>Upload Date</th>
+                    </tr>
+                </thead>
+                <tbody id="logsBody">
+                    <tr><td colspan="4" style="text-align: center;">Loading logs...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script>
+        async function fetchLogs() {
+            try {
+                const response = await fetch('/api/logs');
+                if (!response.ok) {
+                    const err = await response.json();
+                    throw new Error(err.error || 'Failed to fetch database logs');
+                }
+                const logs = await response.json();
+                
+                const tbody = document.getElementById('logsBody');
+                tbody.innerHTML = '';
+                
+                if (logs.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="4" style="text-align: center;">No uploads recorded yet.</td></tr>';
+                    return;
+                }
+                
+                logs.forEach(log => {
+                    const row = document.createElement('tr');
+                    const date = new Date(log.upload_date).toLocaleString();
+                    row.innerHTML = `
+                        <td>${log.id}</td>
+                        <td>${log.original_filename}</td>
+                        <td>${log.compressed_filename}</td>
+                        <td>${date}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            } catch (error) {
+                document.getElementById('errorBox').style.display = 'block';
+                document.getElementById('errorBox').textContent = error.message;
+                document.getElementById('logsBody').innerHTML = '<tr><td colspan="4" style="text-align: center; color: #ef4444;">Failed to load data</td></tr>';
+            }
+        }
+        
+        fetchLogs();
+    </script>
+</body>
+</html>

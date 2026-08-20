@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZipZap - Compress Documents</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+    
+    <nav class="navbar">
+        <div class="logo">ZipZap.</div>
+        <ul class="nav-links">
+            <li><a href="index.html">← Back to Home</a></li>
+        </ul>
+    </nav>
+
+    <main class="container page-container">
+        <header>
+            <h1 style="font-size: 2.5rem;">Document Compressor</h1>
+            <p>We'll zip up your files to save space securely.</p>
+        </header>
+
+        <section class="upload-area" id="uploadArea">
+            <div class="upload-content">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h2>Drag & Drop your document here</h2>
+                <p>Supported files: PDF, DOC, DOCX, TXT, PPT, PPTX</p>
+                <button class="browse-btn" onclick="document.getElementById('fileInput').click()">Browse Files</button>
+                <input type="file" id="fileInput" hidden accept=".pdf,.doc,.docx,.txt,.ppt,.pptx">
+            </div>
+        </section>
+
+        <section class="status-area hidden" id="statusArea">
+            <div class="status-card">
+                <div class="status-icon" id="statusIcon">
+                    <div class="spinner"></div>
+                </div>
+                <h3 id="statusText">Scanning file...</h3>
+                <p id="statusSubtext">Ensuring your document is safe.</p>
+                <div class="progress-bar">
+                    <div class="progress" id="progressFill"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="result-area hidden" id="resultArea">
+            <div class="result-card">
+                <h3>Compression Complete!</h3>
+                <a href="#" id="downloadBtn" class="download-btn">Download Compressed File</a>
+                <button class="reset-btn" id="resetBtn">Compress Another</button>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
